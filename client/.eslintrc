@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "airbnb",
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+        // development
+        "no-unused-vars": "warn",
+
+        // prettier syntax rules
+        "object-curly-newline": "off",
+        "operator-linebreak": "off",
+        "implicit-arrow-linebreak": "off"
+  }
+}
