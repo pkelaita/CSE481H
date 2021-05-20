@@ -11,7 +11,7 @@ function Found(props) {
 
   const nextClueOrEndOfHunt = () => {
     console.log(clueNumber);
-    if (clueNumber === 9) {
+    if (clueNumber === 5) {
       path = '/endofhunt';
       buttonText = 'COMPLETE HUNT';
     } else {

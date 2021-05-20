@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Quiz(props) {
   return (
-    <div>
+    <div className="app-width">
       <p>Quiz Time!</p>
       <ol>
         <li>
@@ -72,7 +72,9 @@ function Quiz(props) {
           </RadioGroup>
         </li>
       </ol>
-      <Link to="/result"><Button large="true" intent="primary">SHOW RESULTS</Button></Link>
+      <div className="buttons">
+        <Link to="/result"><Button large="true" intent="primary">SHOW RESULTS</Button></Link>
+      </div>
     </div>
   );
 }
