@@ -1,24 +1,50 @@
-body {
+html, body {
   background-color: grey;
   font-family: 'Roboto Mono', monospace;
-  font-size: 10pt;
+  font-size: 14pt;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-div {
+.app-width {
+  padding-top: 3%;
   background-color: white;
   width: 50%;
+  margin: 0;
+  height: 100%; 
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  padding-top: 4%;
-  padding-bottom: 4%;
+}
+
+div {
+  height: 100%; 
 }
 
 .buttons {
+  padding-top: 35%;
+  /* padding-right: 30%;
+  padding-left: 30%; */
+  bottom: 0px;
+  position: relative;
+  width: 35%;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+Button {
+  font-size: 15pt;
+  margin: 10%;
+  padding: 8%;
 }
 
 .hunt {
-  font-size: 30pt;
+  font-size: 40pt;
+  width: 100%;
+  padding: 0;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Checkbox } from '@blueprintjs/core';
+import { Button, RadioGroup, Radio, Checkbox } from '@blueprintjs/core';
+import { Link } from 'react-router-dom';
 
 function Quiz(props) {
   return (
@@ -8,55 +9,70 @@ function Quiz(props) {
       <ol>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
         <li>
           Question one
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
-          <Checkbox>Option one</Checkbox>
+          <RadioGroup>
+            <Radio label="option one" value="one" />
+            <Radio label="option two" value="two" />
+            <Radio label="option three" value="three" />
+          </RadioGroup>
         </li>
       </ol>
-      <Button large="true" intent="primary">REVIEW ALBUM</Button>
-      <Button large="true" intent="primary">TAKE QUIZ</Button>
+      <Link to="/result"><Button large="true" intent="primary">SHOW RESULTS</Button></Link>
     </div>
   );
 }

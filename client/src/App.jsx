@@ -7,6 +7,8 @@ import Looking from './Looking';
 import Found from './Found';
 import EndOfHunt from './EndOfHunt';
 import Quiz from './Quiz';
+import Result from './Result';
+import ThankYou from './ThankYou';
 
 function App(props) {
   return (
@@ -19,6 +21,8 @@ function App(props) {
           <Route path="/Found" exact component={() => <Found />} />
           <Route path="/endofhunt" exact component={() => <EndOfHunt />} />
           <Route path="/quiz" exact component={() => <Quiz />} />
+          <Route path="/result" exact component={() => <Result />} />
+          <Route path="/thankyou" exact component={() => <ThankYou />} />
         </Switch>
       </BrowserRouter>
     </div>
