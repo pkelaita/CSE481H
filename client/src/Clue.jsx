@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
+import Data from './ClueData';
+import img from './images/clue.png';
 
 const Clue = (props) => {
   const location = useLocation();
@@ -19,10 +21,12 @@ const Clue = (props) => {
   return (
     <div className="app-width">
       <h1>Here&apos;s your {firstOrNext} clue:</h1>
-      <img alt="placeholder space for image" />
-      <p>EVERY LITTER BIT HURTS</p>
-      <p>placeholder for fact</p>
-      <p>Find the trash cans in the HUB with big screens behind them.</p>
+      <img alt="placeholder space for image" src={img} />
+      <div className="fact">
+        <p>{Data[clueNumber - 1].phrase}</p>
+        <p>{Data[clueNumber - 1].text}</p>
+        <p>{Data[clueNumber - 1].prompt}</p>
+      </div>
       <div className="buttons">
         <Link to={{
           pathname: '/looking',

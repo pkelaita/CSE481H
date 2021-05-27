@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
+import { Camera } from 'react-camera-pro';
 
 function Found(props) {
+  const camera = useRef(null);
+  const [image, setImage] = useState(null);
+  const [takePhoto, setTakePhoto] = useState(true);
+  const [confirmPhoto, setComfirmPhoto] = useState(true);
+  const [isDisabled, setIsDisabled] = useState(true);
+
   const location = useLocation();
   const { clueNumber } = location.state;
 
@@ -22,18 +29,56 @@ function Found(props) {
 
   nextClueOrEndOfHunt();
 
+  const handleTakePhoto = () => {
+    setTakePhoto(false);
+    setImage(camera.current.takePhoto());
+  };
+
+  const handleUsePhoto = () => {
+    setComfirmPhoto(false);
+    setIsDisabled(false);
+  };
+
+  const handleRetakePhoto = () => {
+    setTakePhoto(true);
+  };
+
+  const takePhotoElement =
+  (
+    <div className="camera">
+                   <Camera ref={camera} aspectRatio={16 / 9} />
+                   <button onClick={handleTakePhoto} type="submit">TAKE PHOTO</button>
+    </div>
+  );
+
+  const showSaveOrRetake =
+  (
+    <div className="save-or-retake">
+      <button type="submit" onClick={handleUsePhoto}>Use photo</button>
+      <p>OR</p>
+      <button type="submit" onClick={handleRetakePhoto}>Retake photo</button>
+    </div>
+  );
+
+  const showTakenPhoto =
+  (
+    <div>
+      <img src={image} alt="image" />
+      { confirmPhoto ? showSaveOrRetake : null }
+    </div>
+  );
+
   return (
     <div className="app-width">
-      <p>You found the clue!</p>
-      <img alt="placeholder space" />
+      <h1>You found the clue!</h1>
+      { takePhoto ? takePhotoElement : showTakenPhoto }
       <div className="buttons">
-        <Button large="true" intent="primary">TAKE PHOTO</Button>
         <Link to={{
           pathname: path,
           state: location.state,
         }}
         >
-          <Button large="true" intent="primary">{buttonText}</Button>
+          <Button disabled={isDisabled} large="true" intent="primary">{buttonText}</Button>
         </Link>
       </div>
     </div>

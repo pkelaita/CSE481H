@@ -19,8 +19,10 @@
         "object-curly-newline": "off",
         "operator-linebreak": "off",
         "implicit-arrow-linebreak": "off",
-        "max-len": ["error", { "code": 300 }],
+        "max-len": "off",
         "react/jsx-one-expression-per-line": "off",
-        "jsx-a11y/img-redundant-alt": "off"
+        "jsx-a11y/img-redundant-alt": "off",
+        "react/jsx-indent": "off",
+        "react/jsx-boolean-value": "off"
   }
 }

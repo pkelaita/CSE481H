@@ -11,40 +11,125 @@ html, body {
 .app-width {
   padding-top: 3%;
   background-color: white;
-  width: 50%;
   margin: 0;
-  height: 100%; 
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-div {
-  height: 100%; 
+img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-size: 22pt;
+}
+
+input {
+  margin: 5%;
+  width: 250px;
+  height: 42px;
+  border: 2px solid black;
+}
+
+p {
+  font-size: 14pt;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .buttons {
-  padding-top: 28%;
-  /* padding-right: 30%;
-  padding-left: 30%; */
-  bottom: 0px;
-  position: relative;
-  width: 35%;
+  width: 60%;
+  background-color: white;
   margin-right: auto;
   margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 10%;
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 Button {
-  font-size: 15pt;
+  font-size: 14pt;
   margin: 10%;
-  padding: 8%;
+  padding: 10%;
 }
 
 .hunt {
-  font-size: 40pt;
+  font-size: 35pt;
   width: 100%;
   padding: 0;
+}
+
+.fact {
+  background-color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+img, .flag {
+  width: 54%;
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+ol {
+  font-size: small;
+  background-color: white;
+  text-align: left;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10;
+}
+
+video {
+  height: 300px !important;
+}
+
+.camera {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.save-or-retake {
+  display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.save-or-retake > p {
+  padding-bottom: 7%;
+}
+
+.save-or-retake > button {
+  padding: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0%;
+  margin-top: 4%;
+  height: 80%;
+  font-size: 11pt;
+}
+
+.camera > button {
+  margin-top: 50%;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 14pt;
+  padding: 8%;
+  font-family: 'Roboto Mono', monospace;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
+import img from './images/clue.png';
+import Data from './ClueData';
 /* import { geolocated } from "react-geolocated"; */
 
 function Looking(props) {
@@ -14,8 +16,8 @@ function Looking(props) {
     ) : this.props.coords ? ( */
   return (
     <div className="app-width">
-      <p>Find the trash cans in the HUB with big screens behind them.</p>
-      <img alt="placeholder space for image" />
+      <h1>{Data[clueNumber - 2].prompt}</h1>
+      <img alt="placeholder space for image" src={img} />
       <div className="buttons">
         <Link to={{
           pathname: '/found',
