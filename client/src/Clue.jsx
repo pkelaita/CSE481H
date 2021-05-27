@@ -23,9 +23,12 @@ const Clue = (props) => {
       <h1>Here&apos;s your {firstOrNext} clue:</h1>
       <img alt="placeholder space for image" src={img} />
       <div className="fact">
-        <p>{Data[clueNumber - 1].phrase}</p>
-        <p>{Data[clueNumber - 1].text}</p>
-        <p>{Data[clueNumber - 1].prompt}</p>
+        <p className="bold">{Data[clueNumber - 1].phrase}</p>
+        <p>{Data[clueNumber - 1].text[1]}</p>
+        <p>{Data[clueNumber - 1].text[2]}</p>
+        <p>{Data[clueNumber - 1].text[3]}</p>
+        <p>{Data[clueNumber - 1].text[4]}</p>
+        <p className="bold">{Data[clueNumber - 1].prompt}</p>
       </div>
       <div className="buttons">
         <Link to={{
