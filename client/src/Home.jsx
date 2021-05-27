@@ -6,7 +6,7 @@ function Home(props) {
   return (
     <div className="app-width">
       <p className="hunt">enviro-hunt</p>
-      <p>@ UNIVERSITY OF WASHINGTON, SEATTLE</p>
+      <p className="location">@ UNIVERSITY OF WASHINGTON</p>
       <div className="buttons">
         <Link to={{
           pathname: '/clue',

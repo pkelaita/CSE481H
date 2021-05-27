@@ -1,7 +1,7 @@
 html, body {
   background-color: grey;
   font-family: 'Roboto Mono', monospace;
-  font-size: 14pt;
+  font-size: 9pt;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -28,10 +28,20 @@ img {
 
 .bold {
   font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
 }
 
 h1 {
-  font-size: 22pt;
+  font-size: 17pt;
+  text-align: left;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+h2 {
+  font-size: 36pt;
+  text-align: center;
 }
 
 input {
@@ -44,9 +54,11 @@ input {
 }
 
 p {
-  font-size: 14pt;
-  padding-left: 5%;
-  padding-right: 5%;
+  font-size: 12pt;
+  text-align: left;
+  font-family: 'Roboto';
+  padding-left: 7%;
+  padding-right: 7%;
 }
 
 .buttons {
@@ -61,21 +73,34 @@ p {
 }
 
 Button {
-  font-size: 14pt;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12pt;
+  font-weight: bold;
   margin: 10%;
   padding: 10%;
 }
 
 .hunt {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
   font-size: 35pt;
   width: 100%;
   padding: 0;
 }
 
+.location {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  font-weight: bold;
+}
+
 .fact {
   background-color: white;
-  padding-left: 10%;
-  padding-right: 10%;
+  /* font-size: 12pt;
+  text-align: left;
+  font-family: 'Roboto';
+  padding-left: 3%;
+  padding-right: 3%; */
 }
 
 img, .flag {
@@ -90,11 +115,12 @@ img, .flag {
 
 ol {
   font-size: small;
+  font-family: 'Roboto';
   background-color: white;
   text-align: left;
   padding-top: 10%;
   padding-left: 10%;
-  padding-right: 10;
+  padding-right: 10%;
 }
 
 video {

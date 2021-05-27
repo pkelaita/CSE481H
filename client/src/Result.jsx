@@ -6,9 +6,9 @@ function Result(props) {
   return (
     <div className="app-width">
       <h1>Congratulations!</h1>
-      <h1>3/4</h1>
-      <p>You got 6 out of 8 questions correct!</p>
-      <p>Please enter your Email-ID where you would like to recieve your photo collage and $10 University Bookstore giftcard</p>
+      <h2>3/4</h2>
+      <p>You got 3 out of 4 questions correct!</p>
+      <p>Please enter your email where you would like to recieve your photo collage and $10 University Bookstore giftcard.</p>
       <input type="email" />
       <div className="buttons">
         <Link to="/thankyou"><Button large="true" intent="primary">SUBMIT</Button></Link>
