@@ -34,7 +34,7 @@ h1 {
   font-size: 22pt;
 }
 
-input {
+.email {
   margin: 5%;
   width: 250px;
   height: 42px;
@@ -82,19 +82,16 @@ img, .flag {
   width: 54%;
 }
 
-.radio {
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-}
-
 ol {
   font-size: small;
-  background-color: white;
   text-align: left;
-  padding-top: 10%;
+  margin-top: 10%;
   padding-left: 10%;
-  padding-right: 10;
+  padding-right: 10%;
+}
+
+label {
+  display: flex;
 }
 
 video {
@@ -138,4 +135,23 @@ video {
   font-size: 14pt;
   padding: 8%;
   font-family: 'Roboto Mono', monospace;
+}
+
+.social-media {
+  display: flex;
+  margin-bottom: 5%;
+  justify-content: space-between;
+}
+
+.social-media > img {
+  width: 56px;
+  height: 56px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 300px;
 }

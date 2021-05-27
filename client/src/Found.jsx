@@ -63,7 +63,7 @@ function Found(props) {
   const showTakenPhoto =
   (
     <div>
-      <img src={image} alt="image" />
+      <img src={image} alt="image" className="photo" />
       { confirmPhoto ? showSaveOrRetake : null }
     </div>
   );

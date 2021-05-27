@@ -40,7 +40,7 @@ const Clue = (props) => {
         >
           <Button large="true" intent="primary">START LOOKING</Button>
         </Link>
-        <a href="www.google.com">LEARN MORE</a>
+        <a href="https://docs.google.com/document/d/1SyYoCpSdKEuse6FUSOj7t8TdFT2jO1GxuIHvsyLfrfc/edit?usp=sharing" target="_blank" rel="noreferrer">LEARN MORE</a>
       </div>
     </div>
   );
