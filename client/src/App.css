@@ -155,3 +155,7 @@ video {
   margin-bottom: 10%;
   width: 300px;
 }
+
+.instruction {
+  text-align: left;
+}

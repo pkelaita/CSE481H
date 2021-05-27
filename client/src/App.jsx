@@ -9,6 +9,12 @@ import EndOfHunt from './EndOfHunt';
 import Quiz from './Quiz';
 import Result from './Result';
 import ThankYou from './ThankYou';
+import StepOne from './instruction-pages/StepOne';
+import StepTwo from './instruction-pages/StepTwo';
+import StepThree from './instruction-pages/StepThree';
+import StepFour from './instruction-pages/StepFour';
+import StepFive from './instruction-pages/StepFive';
+import StepSix from './instruction-pages/StepSix';
 
 function App(props) {
   return (
@@ -23,6 +29,13 @@ function App(props) {
           <Route path="/quiz" exact component={() => <Quiz />} />
           <Route path="/result" exact component={() => <Result />} />
           <Route path="/thankyou" exact component={() => <ThankYou />} />
+          <Route path="/stepone" exact component={() => <StepOne />} />
+          <Route path="/steptwo" exact component={() => <StepTwo />} />
+          <Route path="/stepthree" exact component={() => <StepThree />} />
+          <Route path="/stepFour" exact component={() => <StepFour />} />
+          <Route path="/stepfive" exact component={() => <StepFive />} />
+          <Route path="/stepsix" exact component={() => <StepSix />} />
+
         </Switch>
       </BrowserRouter>
     </div>
