@@ -17,7 +17,7 @@ function Home(props) {
         >
           <Button icon="play" large="true" intent="primary"> START</Button>
         </Link>
-        <Button icon="manual" large="true" intent="primary">  HOW TO PLAY</Button>
+        <Button icon="manual" large="true" intent="primary"> HOW TO PLAY</Button>
       </div>
     </div>
   );
