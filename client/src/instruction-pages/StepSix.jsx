@@ -8,7 +8,7 @@ function StepSix(props) {
     <div className="app-width">
       <h1>Step Five</h1>
       <img alt="clue" src={img} className="flag" />
-      <p className="instruction">When you complete the hunt, review your photo album + facts before taking the quiz. You will then have unlimited attempts on the quiz to answer enough questions correctly.</p>
+      <p className="instruction">When you complete the hunt, review your photo album + facts before taking the quiz. You will then have <b>unlimited attempts on the quiz</b> to answer enough questions correctly.</p>
       <Link to={{
         pathname: '/',
       }}
