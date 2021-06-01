@@ -3,7 +3,6 @@ import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 import { Camera } from 'react-camera-pro';
 import ReactCardFlip from 'react-card-flip';
-import flag from './images/flag.png';
 
 function Found(props) {
   const camera = useRef(null);
@@ -55,7 +54,10 @@ function Found(props) {
   (
     <div className="camera">
                    <Camera ref={camera} aspectRatio={16 / 9} />
-                   <button onClick={handleTakePhoto} type="submit">TAKE PHOTO</button>
+                   <div className="take-or-switch">
+                    <button onClick={handleTakePhoto} type="submit">TAKE PHOTO</button>
+                    <button type="submit" onClick={() => { camera.current.switchCamera(); }}>SWITCH CAMERA</button>
+                   </div>
     </div>
   );
 
