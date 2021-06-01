@@ -8,7 +8,7 @@ function StepTwo(props) {
     <div className="app-width">
       <h1>Step One</h1>
       <img alt="clue" src={img} className="flag" />
-      <p className="instruction">First, you can take a skippable personalization survey to customize which clues are given to you based on your interests in sustainability.</p>
+      <p className="instruction">First, you can take a skippable personalization survey to <b>customize which clues are given to you based on your interests in sustainability.</b></p>
       <Link to={{
         pathname: '/stepthree',
       }}

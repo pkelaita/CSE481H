@@ -8,7 +8,7 @@ function StepThree(props) {
     <div className="app-width">
       <h1>Step Two</h1>
       <img alt="clue" src={img} className="flag" />
-      <p className="instruction">Afterwards, you will be given your first clue. Please turn on your device’s Location Services (GPS) and vibrate mode, as your phone will vibrate to notify you when you’ve reached a clue location.</p>
+      <p className="instruction">Afterwards, you will be given your first clue. Please <b>turn on your device’s Location Services (GPS) and vibrate mode,</b> as your phone will vibrate to notify you when you’ve reached a clue location.</p>
       <Link to={{
         pathname: '/stepfour',
       }}

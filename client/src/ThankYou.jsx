@@ -7,8 +7,8 @@ function EndOfHunt(props) {
     <div className="app-width">
       <h1>Thank you for playing!</h1>
       <img alt="flag" src={img} className="flag" />
-      <p>ENVIRO-HUNT</p>
-      <p>@ UNIVERSITY OF WASHINGTON, SEATTLE</p>
+      <p className="location">ENVIRO-HUNT</p>
+       <p className="location">@ UNIVERSITY OF WASHINGTON</p>
     </div>
   );
 }
