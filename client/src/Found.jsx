@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 import { Camera } from 'react-camera-pro';
+import ReactCardFlip from 'react-card-flip';
+import flag from './images/flag.png';
 
 function Found(props) {
   const camera = useRef(null);
@@ -9,6 +11,7 @@ function Found(props) {
   const [takePhoto, setTakePhoto] = useState(true);
   const [confirmPhoto, setComfirmPhoto] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const location = useLocation();
   const { clueNumber } = location.state;
@@ -43,6 +46,11 @@ function Found(props) {
     setTakePhoto(true);
   };
 
+  const flipCard = (e) => {
+    e.preventDefault();
+    setIsFlipped(!isFlipped);
+  };
+
   const takePhotoElement =
   (
     <div className="camera">
@@ -60,10 +68,23 @@ function Found(props) {
     </div>
   );
 
+  const flippingCard =
+  (
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+      <img src={image} alt="image" className="photo" onClick={flipCard} />
+
+      <div className="fact-card" onClick={flipCard}>
+        <p>phrase</p>
+        <p>fact para 1</p>
+        <p>fact para 2</p>
+      </div>
+    </ReactCardFlip>
+  );
+
   const showTakenPhoto =
   (
     <div>
-      <img src={image} alt="image" className="photo" />
+      {flippingCard}
       { confirmPhoto ? showSaveOrRetake : null }
     </div>
   );

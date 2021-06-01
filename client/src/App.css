@@ -159,3 +159,7 @@ video {
 .instruction {
   text-align: left;
 }
+
+.fact-card {
+  border: 5px solid black;
+}
