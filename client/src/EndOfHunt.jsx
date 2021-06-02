@@ -3,6 +3,9 @@ import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 
 function EndOfHunt(props) {
+  const location = useLocation();
+  const { images } = location.state;
+
   return (
     <div className="app-width">
       <h1>You completed the hunt!</h1>
@@ -10,8 +13,21 @@ function EndOfHunt(props) {
       <p>Review your knowledge by checking out the album that you’ve been using to store your facts and memories. Afterwards, take a short quiz to redeem your custom photo collage and coupon to select sustainable products at the UW Bookstore.</p>
       <p><b>Answer three out of four questions correctly to redeem your collage and coupon. You have unlimited attempts!</b></p>
       <div className="buttons">
-        <Button large="true" intent="primary">REVIEW ALBUM</Button>
-        <Link to="./quiz"><Button large="true" intent="primary">TAKE QUIZ</Button></Link>
+        <Link to={{
+          pathname: '/album',
+          state: {
+            images: images,
+          },
+        }}
+        >
+          <Button large="true" intent="primary">REVIEW ALBUM</Button>
+        </Link>
+        <Link to={{
+          pathname: '/quiz',
+        }}
+        >
+          <Button large="true" intent="primary">TAKE QUIZ</Button>
+        </Link>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import Data from './ClueData';
 
 function Looking(props) {
   const location = useLocation();
-  const { clueNumber } = location.state;
+  const { clueNumber, images } = location.state;
 
   /*  return !this.props.isGeolocationAvailable ? (
         <div>Your browser does not support Geolocation</div>
@@ -21,7 +21,10 @@ function Looking(props) {
       <div className="buttons">
         <Link to={{
           pathname: '/found',
-          state: location.state,
+          state: {
+            clueNumber: clueNumber,
+            images: images,
+          },
         }}
         >
           <Button large="true" intent="primary">MAP</Button>

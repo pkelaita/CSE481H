@@ -6,7 +6,7 @@ import img from './images/clue.png';
 
 const Clue = (props) => {
   const location = useLocation();
-  const { clueNumber } = location.state;
+  const { clueNumber, images } = location.state;
 
   const determineFirstOrNext = () => {
     let ret = 'next';
@@ -35,6 +35,7 @@ const Clue = (props) => {
           pathname: '/looking',
           state: {
             clueNumber: clueNumber + 1,
+            images: images,
           },
         }}
         >

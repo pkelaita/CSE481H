@@ -13,13 +13,12 @@ function Found(props) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const location = useLocation();
-  const { clueNumber } = location.state;
+  const { clueNumber, images } = location.state;
 
   let path = '';
   let buttonText = '';
 
   const nextClueOrEndOfHunt = () => {
-    console.log(clueNumber);
     if (clueNumber === 5) {
       path = '/endofhunt';
       buttonText = 'COMPLETE HUNT';
@@ -39,6 +38,9 @@ function Found(props) {
   const handleUsePhoto = () => {
     setComfirmPhoto(false);
     setIsDisabled(false);
+    console.log(clueNumber - 2);
+    images[clueNumber - 2] = image;
+    console.log(images);
   };
 
   const handleRetakePhoto = () => {
@@ -53,7 +55,7 @@ function Found(props) {
   const takePhotoElement =
   (
     <div className="camera">
-                   <Camera ref={camera} aspectRatio={16 / 9} />
+                   <Camera ref={camera} aspectRatio={1 / 1} />
                    <div className="take-or-switch">
                     <button onClick={handleTakePhoto} type="submit">TAKE PHOTO</button>
                     <button type="submit" onClick={() => { camera.current.switchCamera(); }}>SWITCH CAMERA</button>
@@ -98,7 +100,10 @@ function Found(props) {
       <div className="buttons">
         <Link to={{
           pathname: path,
-          state: location.state,
+          state: {
+            clueNumber: clueNumber,
+            images: images,
+          },
         }}
         >
           <Button disabled={isDisabled} large="true" intent="primary">{buttonText}</Button>
