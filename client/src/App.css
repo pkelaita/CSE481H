@@ -1,5 +1,6 @@
 html, body {
-  background-color: grey;
+  background-color: #EFF9F7;
+  color: #355159;
   font-family: 'Roboto Mono', monospace;
   font-size: 9pt;
   height: 100%;
@@ -194,4 +195,11 @@ label {
 .fact-card {
   border: 5px solid black;
   margin: 10%;
+}
+
+.personalize {
+  margin-top: 20%;
+  margin-bottom: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
 }

@@ -11,7 +11,7 @@ function Home(props) {
       <p className="location">@ UNIVERSITY OF WASHINGTON</p>
       <div className="buttons">
         <Link to={{
-          pathname: '/clue',
+          pathname: '/personalization',
           state: {
             clueNumber: 1,
             images: imageList,

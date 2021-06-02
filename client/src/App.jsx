@@ -16,6 +16,7 @@ import StepFour from './instruction-pages/StepFour';
 import StepFive from './instruction-pages/StepFive';
 import StepSix from './instruction-pages/StepSix';
 import Album from './Album';
+import Personalization from './Personalization';
 
 function App(props) {
   return (
@@ -37,6 +38,7 @@ function App(props) {
           <Route path="/stepfive" exact component={() => <StepFive />} />
           <Route path="/stepsix" exact component={() => <StepSix />} />
           <Route path="/album" exact component={() => <Album />} />
+          <Route path="/personalization" exact component={() => <Personalization />} />
 
         </Switch>
       </BrowserRouter>
