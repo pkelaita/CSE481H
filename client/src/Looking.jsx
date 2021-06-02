@@ -1,22 +1,39 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
+import { usePosition } from 'use-position';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 import img from './images/clue.png';
 import Data from './ClueData';
-/* import { geolocated } from "react-geolocated"; */
 
 function Looking(props) {
   const location = useLocation();
   const { clueNumber, images } = location.state;
 
-  /*  return !this.props.isGeolocationAvailable ? (
-        <div>Your browser does not support Geolocation</div>
-    ) : !this.props.isGeolocationEnabled ? (
-        <div>Geolocation is not enabled</div>
-    ) : this.props.coords ? ( */
+  const watch = true;
+  const {
+    latitude,
+    longitude,
+    speed,
+    timestamp,
+    accuracy,
+    error,
+  } = usePosition(watch);
+
+  useEffect(() => {
+    console.log('your new position is:');
+    console.log(latitude);
+    console.log(longitude);
+  });
+
   return (
     <div className="app-width">
       <h1>{Data[clueNumber - 2].prompt}</h1>
+      latitude: {latitude}<br />
+      longitude: {longitude}<br />
+      speed: {speed}<br />
+      timestamp: {timestamp}<br />
+      accuracy: {accuracy && `${accuracy}m`}<br />
+      error: {error}
       <img alt="placeholder space for image" src={img} />
       <div className="buttons">
         <Link to={{
@@ -33,9 +50,6 @@ function Looking(props) {
       </div>
     </div>
   );
-  /* ) : (
-            <div>Getting the location data&hellip; </div>
-    ); */
 }
 
 export default Looking;
