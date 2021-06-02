@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 import Select from 'react-select';
+import axios from 'axios';
 
 const Personalization = (props) => {
   const location = useLocation();
@@ -13,6 +14,17 @@ const Personalization = (props) => {
     { value: 'Climate Change', label: 'Climate Change' },
     { value: 'Personal Hobbies', label: 'Personal Hobbies' },
   ];
+
+  const handleNext = () => {
+    // axios.get('/user', {
+    //   params: {
+    //     ID: 12345
+    //   }
+    // })
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+  };
 
   return (
     <div className="app-width">
@@ -26,7 +38,7 @@ const Personalization = (props) => {
       },
     }}
     >
-        <Button icon="play" large="true" intent="primary">NEXT</Button>
+        <Button icon="play" large="true" intent="primary" onClick={handleNext}>NEXT</Button>
     </Link>
     </div>
   );
