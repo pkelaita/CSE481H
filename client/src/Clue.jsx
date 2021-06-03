@@ -23,7 +23,6 @@ const Clue = (props) => {
 
   return (
     <div className="app-width">
-      <h1>Here&apos;s your {firstOrNext} clue:</h1>
       <img alt="placeholder space for image" src={currLocation.img} />
       <div className="fact">
         <p className="bold">{currLocation.phrase}</p>

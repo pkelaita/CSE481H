@@ -66,9 +66,9 @@ function Found(props) {
   const showSaveOrRetake =
   (
     <div className="save-or-retake">
-      <button type="submit" onClick={handleUsePhoto}>Use photo</button>
-      <p>OR</p>
-      <button type="submit" onClick={handleRetakePhoto}>Retake photo</button>
+      <button type="submit" onClick={handleUsePhoto}>USE PHOTO</button>
+      <p><b>OR</b></p>
+      <button type="submit" onClick={handleRetakePhoto}>RETAKE</button>
     </div>
   );
 

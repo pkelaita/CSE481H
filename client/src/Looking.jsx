@@ -25,7 +25,7 @@ function Looking(props) {
         },
       }}
       >
-        <img alt="placeholder space for image" src={Data[locations[clueNumber - 2]].img} />
+        <img alt="placeholder space for image" src={Data[locations[clueNumber - 2]].img} className="looking" />
       </Link>
       <div className="buttons">
         <a href="https://www.washington.edu/maps/" target="_blank" rel="noreferrer">
