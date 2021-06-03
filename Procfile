@@ -1,1 +1,1 @@
-web sh -c 'cd ./server/ && make server'
+web make server
