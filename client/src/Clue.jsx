@@ -41,7 +41,7 @@ const Clue = (props) => {
         >
           <Button large="true" intent="primary">START LOOKING</Button>
         </Link>
-        <a href="https://drive.google.com/file/d/1-t3nIA6uY4ZX8NUCwvrhQmiILRSz0toh/view?usp=sharing" target="_blank" rel="noreferrer">LEARN MORE</a>
+        <a href="https://drive.google.com/file/d/1PC8HU4YvXF3Aup76MNK8PwFWefI6Qxpr/view?usp=sharing" target="_blank" rel="noreferrer">LEARN MORE</a>
       </div>
     </div>
   );
