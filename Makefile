@@ -24,5 +24,3 @@ clean:
 bootstrap:
 	@python3 -m pip install -r requirements.txt
 	@python3 -m pip install -r requirements-test.txt
-	@python3 -m pip install -e .
-	@find . -type d -name '*.egg-info' -prune -exec rm -rf {} \;
