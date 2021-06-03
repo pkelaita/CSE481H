@@ -81,9 +81,9 @@ function Found(props) {
       <img src={image} alt="image" className="photo" onClick={flipCard} />
 
       <div className="fact-card" onClick={flipCard}>
-        <p>{Data[locations[clueNumber - 2]].phrase}</p>
-        <p>{Data[locations[clueNumber - 2]].short[0]}</p>
-        <p>{Data[locations[clueNumber - 2]].short[1]}</p>
+        <p>phrase</p>
+        <p>fact 1</p>
+        <p>fact 2</p>
       </div>
     </ReactCardFlip>
   );

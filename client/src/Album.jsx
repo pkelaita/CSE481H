@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
+import Data from './ClueData';
 
 function Album(props) {
   const location = useLocation();
@@ -37,8 +38,8 @@ function Album(props) {
 
             <div className="fact-card" onClick={flipCard1}>
                 <p>phrase</p>
-                <p>fact para 1</p>
-                <p>fact para 2</p>
+                <p>fact 1</p>
+                <p>fact 2</p>
             </div>
         </ReactCardFlip>
 
