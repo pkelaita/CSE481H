@@ -11,6 +11,22 @@ const data = [
     img: 'images/redsquare.png',
     lat: 47.655739,
     long: -122.312180,
+    question: 'What are some of the impacts that 1.4 million and more seagulls feeding in North American landfills have on the environment?',
+    qtype: 'radio',
+    ansOptions: [
+      {
+        isCorrect: false,
+        text: 'Higher mortality rates of seagulls in the surrounding region due to aircrafts.',
+      },
+      {
+        isCorrect: true,
+        text: 'Extra tens to hundreds of tons of nitrogen and phosphorus in nearby lakes and reservoirs.',
+      },
+      {
+        isCorrect: false,
+        text: 'Increased costs for local governments to maintain water quality levels.',
+      },
+    ],
   },
   {
     phrase: 'REUSE THE NEWS',
@@ -24,6 +40,18 @@ const data = [
     img: 'images/comm.png',
     lat: 47.655270,
     long: -122.311493,
+    question: 'True or false: Recycling paper using current methods and energy sources will help reduce emissions and combat climate change.',
+    qtype: 'radio',
+    ansOptions: [
+      {
+        isCorrect: false,
+        text: 'true',
+      },
+      {
+        isCorrect: true,
+        text: 'false',
+      },
+    ],
   },
   {
     phrase: 'LETTUCE COMPOST TOGETHER',
@@ -37,6 +65,22 @@ const data = [
     img: 'images/hub.png',
     lat: 47.655739,
     long: -122.312180,
+    question: 'Is disposing food waste in the garbage more sustainable than composting it, why or why not?',
+    qtype: 'radio',
+    ansOptions: [
+      {
+        isCorrect: true,
+        text: 'No, food waste in landfills decay and produce the greenhouse gas methane while the correct type (aerobic) of composting doesn’t.',
+      },
+      {
+        isCorrect: false,
+        text: 'Yes, food waste in landfills are buried and all gases produced are trapped, therefore there are no emissions when compared to composting.',
+      },
+      {
+        isCorrect: false,
+        text: 'Yes, although food waste in landfills produce methane, the amount of methane emissions is lower compared to aerobic composting.',
+      },
+    ],
   },
   {
     phrase: 'SHE SELLS PLASTIC BY THE SEA SHORE',
@@ -50,6 +94,22 @@ const data = [
     img: 'images/roberts.png',
     lat: 47.655270,
     long: -122.311493,
+    question: 'Select all of the true statement(s) about the research from UW on microplastics found in Puget Sound oysters.',
+    qtype: 'checkbox',
+    ansOptions: [
+      {
+        isCorrect: true,
+        text: 'Five out of the ten sites examined had oysters that contained microplastics.',
+      },
+      {
+        isCorrect: false,
+        text: 'Oysters in the Puget Sound contained an average amount of microplastics in them.',
+      },
+      {
+        isCorrect: true,
+        text: 'The research results serve as a first baseline value for microplastics in oysters from Washington.',
+      },
+    ],
   },
   {
     phrase: 'A DAY IN THE LEAF',
@@ -63,6 +123,22 @@ const data = [
     img: 'images/medicinal.png',
     lat: 47.655270,
     long: -122.311493,
+    question: 'Select the false statement about medicinal and vegetable gardens.',
+    qtype: 'radio',
+    ansOptions: [
+      {
+        isCorrect: false,
+        text: '15,000 medicinal plants are on the brink of extinction due to overharvesting and habitat destruction.',
+      },
+      {
+        isCorrect: false,
+        text: 'For each kilo of homegrown vegetables, greenhouse gas emissions can be cut by two kilograms when compared to the store-bought counterpart.',
+      },
+      {
+        isCorrect: true,
+        text: 'Medicinal plants and herbs are rarely used today in modern medicine.',
+      },
+    ],
   },
   {
     phrase: 'A PEAK EXPERIENCE',
@@ -76,6 +152,22 @@ const data = [
     img: 'images/lifesciences.png',
     lat: 47.655270,
     long: -122.311493,
+    question: 'Why are earlier snow melts due to climate change on Mount Rainier a cause for concern? Select all that apply.',
+    qtype: 'checkbox',
+    ansOptions: [
+      {
+        isCorrect: true,
+        text: 'Earlier snow melts lead to Mount Rainier’s wildflowers blooming earlier.',
+      },
+      {
+        isCorrect: true,
+        text: 'Rainier’s wildflower bloomed in a different order than usual in 2015 due to snow melting much earlier.',
+      },
+      {
+        isCorrect: true,
+        text: 'Wildflowers blooming earlier than what tourists expect means there’s a mismatch between peak blooming and tourist season.',
+      },
+    ],
   },
   {
     phrase: 'PAINT THAT TAINTS',
@@ -89,6 +181,22 @@ const data = [
     img: 'images/henry.png',
     lat: 47.655270,
     long: -122.311493,
+    question: 'What is the correct way to dispose of water-based paints according to King County guidelines?',
+    qtype: 'radio',
+    ansOptions: [
+      {
+        isCorrect: false,
+        text: 'It is safe to dump all water-based paints down the drain.',
+      },
+      {
+        isCorrect: true,
+        text: 'Dry out any water-based paint and discard the dry paint in the trash.',
+      },
+      {
+        isCorrect: false,
+        text: 'Throwing all (not yet dried) water-based paint in the trash is safe.',
+      },
+    ],
   },
   {
     phrase: 'DEWEY DECIMATE CONSUMER WASTE',
@@ -102,6 +210,22 @@ const data = [
     img: 'images/law.png',
     lat: 47.655270,
     long: -122.311493,
+    question: 'What are the positive implications of a Library of Things system? Select all that apply.',
+    qtype: 'checkbox',
+    ansOptions: [
+      {
+        isCorrect: false,
+        text: 'Library of Things systems can always generate additional revenue for green initiatives.',
+      },
+      {
+        isCorrect: true,
+        text: 'Decreased waste and carbon emissions.',
+      },
+      {
+        isCorrect: true,
+        text: 'Using a Library of Things system can encourage borrowers to engage in other sustainable behaviors as well.',
+      },
+    ],
   },
 ];
 

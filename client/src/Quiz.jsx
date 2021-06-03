@@ -3,6 +3,24 @@ import { Button, RadioGroup, Radio, Checkbox } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
 
 function Quiz(props) {
+  const li = (
+    <li>
+      <span>question</span>
+      <br />
+      <br />
+      <label htmlFor="q1o1">
+        <input type="radio" id="q1o1" name="question1" className="radio" />
+        Higher mortality rates of seagulls in the surrounding region due to aircrafts.
+      </label><br />
+      <label htmlFor="q1o2">
+        <input type="radio" id="q1o2" name="question1" className="radio" />
+        Extra tens to hundreds of tons of nitrogen and phosphorus in nearby lakes and reservoirs.
+      </label><br />
+      <br />
+      <br />
+    </li>
+  );
+
   return (
     <div className="app-width">
       <h1>Quiz Time!</h1>
