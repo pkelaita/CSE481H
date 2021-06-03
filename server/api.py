@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_cors import CORS
 
 from utils import tojson
@@ -6,9 +6,14 @@ import config as api_config
 
 from routes.personalization import personalization_bp
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 app.config.from_object('config.BaseConfig')
 CORS(app)
+
+
+@app.route('/', defaults={'path': ''})
+def serve(path):
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/api', methods=['GET'])

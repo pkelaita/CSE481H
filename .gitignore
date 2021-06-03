@@ -26,7 +26,6 @@ htmlcov/
 # Client-side
 client/node_modules
 client/coverage
-client/build
 
 # Logs
 npm-debug.log*
