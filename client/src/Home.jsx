@@ -9,6 +9,7 @@ function Home(props) {
     <div className="app-width">
       <p className="hunt">enviro-hunt</p>
       <p className="location">@ UNIVERSITY OF WASHINGTON</p>
+      <img className="start-screen" src="images/start_screen.png" alt="UW logo" />
       <div className="buttons">
         <Link to={{
           pathname: '/personalization',
