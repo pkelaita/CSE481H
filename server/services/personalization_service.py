@@ -1,13 +1,12 @@
 from constants import PERSONALIZATION, LOCATIONS, TOPICS
 
-
 def get_locs(options):
+
     return [
-        loc for loc in LOCATIONS
-        if len(
+        bool(len(
             set([TOPICS[i] for i in range(len(TOPICS)) if options[i]])
             .intersection(set(PERSONALIZATION['mapping'][loc]))
-        )
+        )) for loc in LOCATIONS
     ]
 
 

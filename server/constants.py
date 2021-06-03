@@ -11,13 +11,13 @@ LAW_LIB = 'Gallagher Law Library'
 
 # Topics
 WILDLIFE = 'Wildlife'
-CARBON = "Carbon emissions"
-COMPOST = "Composting"
-MICRO = "Microplastics"
-GARDENING = "Gardening"
-CLIMATE = "Climate change"
-ENVIRO = "Environmental effects of art"
-REDUCING = "Reducing consumption"
+CARBON = 'Carbon emissions'
+COMPOST = 'Composting'
+MICRO = 'Microplastics'
+GARDENING = 'Gardening'
+CLIMATE = 'Climate change'
+ENVIRO = 'Environmental effects of art'
+REDUCING = 'Reducing consumption'
 WASTE = 'Material waste'
 HOBBIES = 'Personal Hobbies'
 
