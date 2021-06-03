@@ -41,7 +41,7 @@ const Personalization = (props) => {
 
   return (
     <div className="app-width">
-    <h1>Select all topics that interest you</h1>
+    <h1>Select all topics that interest you:</h1>
     <Select className="personalize" options={options} isMulti onChange={handleChange} />
     {handleNext()}
     <Link to={{
