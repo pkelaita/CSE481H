@@ -31,30 +31,32 @@ const Personalization = (props) => {
   };
 
   const handleChange = (so) => {
-    setSelectedOptions(so);
-    const temp = [false, false, false, false, false, false, false, false];
-    for (let i = 0; i < so.length; i++) {
-      temp[so[i].value] = true;
+    if (so !== selectedLocations) {
+      setSelectedOptions(so);
+      const temp = [false, false, false, false, false, false, false, false];
+      for (let i = 0; i < so.length; i++) {
+        temp[so[i].value] = true;
+      }
+      setSelectedOptions(temp);
     }
-    setSelectedOptions(temp);
   };
 
   return (
     <div className="app-width">
-    <h1>Select all topics that interest you:</h1>
-    <Select className="personalize" options={options} isMulti onChange={handleChange} />
-    {handleNext()}
-    <Link to={{
-      pathname: '/clue',
-      state: {
-        clueNumber: 1,
-        locations: locationsToSend,
-        images: images,
-      },
-    }}
-    >
+      <h1>Select all topics that interest you:</h1>
+      <Select className="personalize" options={options} isMulti onChange={handleChange} />
+      {handleNext()}
+      <Link to={{
+        pathname: '/clue',
+        state: {
+          clueNumber: 1,
+          locations: locationsToSend,
+          images: images,
+        },
+      }}
+      >
         <Button large="true" intent="primary" onClick={handleNext}>NEXT</Button>
-    </Link>
+      </Link>
     </div>
   );
 };

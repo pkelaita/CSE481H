@@ -5,6 +5,7 @@ import Data from './ClueData';
 
 const Clue = (props) => {
   const location = useLocation();
+  console.log(location);
   const { clueNumber, locations, images } = location.state;
   let currLocation;
 
