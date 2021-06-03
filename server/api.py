@@ -11,7 +11,7 @@ app.config.from_object('config.BaseConfig')
 CORS(app)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/api', methods=['GET'])
 def root():
     res = {}
     return tojson({'foo': 'bar'})

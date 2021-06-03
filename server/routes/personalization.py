@@ -9,7 +9,7 @@ personalization_bp = Blueprint('personalization_bp', __name__)
 endpoint = 'personalization'
 
 
-@personalization_bp.route(f'/{endpoint}', methods=['GET', 'POST'])
+@personalization_bp.route(f'/api/{endpoint}', methods=['GET', 'POST'])
 def personalization():
     opt = request.get_json()['options']
     return tojson(personalization_service.get_locs(opt))

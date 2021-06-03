@@ -8,7 +8,7 @@ users_bp = Blueprint('users_bp', __name__)
 endpoint = 'users'
 
 
-@users_bp.route(f'/{endpoint}', methods=['GET', 'POST'])
+@users_bp.route(f'api/{endpoint}', methods=['GET', 'POST'])
 def users():
     with DBConnection() as conn:
         col = conn.db.get_collection(db_config.USER_COL)
