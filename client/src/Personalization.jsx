@@ -16,9 +16,9 @@ const Personalization = (props) => {
   ];
 
   const handleNext = () => {
-    // axios.get('/user', {
+    // axios.get(url, {
     //   params: {
-    //     ID: 12345
+    //     topics: ['material waste', 'climate change']
     //   }
     // })
     // .then(function (response) {

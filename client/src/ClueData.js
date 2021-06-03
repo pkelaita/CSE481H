@@ -8,6 +8,8 @@ const data = [
       4: 'Make sure to not feed wildlife like seagulls and also take any leftovers with you! There are trash cans located across campus for you to use.',
     },
     prompt: 'Find the trash cans located closest to the Suzzallo Library.',
+    lat: 47.655739,
+    long: -122.312180,
   },
   {
     phrase: 'REUSE THE NEWS',
@@ -18,6 +20,8 @@ const data = [
       4: 'Just because recycling paper alone doesn’t address climate change, doesn’t mean you shouldn’t! Try reusing newspapers at home as well by composting them or even making crafts.',
     },
     prompt: 'Find the south entrance of the Communications building.',
+    lat: 47.655270,
+    long: -122.311493,
   },
   {
     phrase: 'LETTUCE COMPOST TOGETHER',
@@ -28,6 +32,8 @@ const data = [
       4: 'Check to see if your local city or county offers a curbside compost pickup service, and take advantage of it if you can. You can try aerobic (that doesn’t produce methane) composting as well!',
     },
     prompt: 'Find the main entrance of the HUB.',
+    lat: 47.655739,
+    long: -122.312180,
   },
   {
     phrase: 'SHE SELLS PLASTIC BY THE SEA SHORE',
@@ -38,6 +44,8 @@ const data = [
       4: 'So it’s very important to reduce your consumption of single use plastics.',
     },
     prompt: 'Find Roberts Hall.',
+    lat: 47.655270,
+    long: -122.311493,
   },
 ];
 
