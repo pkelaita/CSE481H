@@ -1,4 +1,4 @@
-.PHONY: bootstrap clean lint test
+.PHONY: bootstrap clean lint test server
 .DEFAULT_GOAL := test
 
 test: clean lint
@@ -13,7 +13,7 @@ cov: clean lint
 		-W ignore::DeprecationWarning
 
 server:
-	@python3 api.py
+	@python3 server/api.py
 
 lint:
 	@flake8 .
