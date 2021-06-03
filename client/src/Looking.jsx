@@ -17,18 +17,20 @@ function Looking(props) {
   const looking = (
     <div className="app-width">
       <h1>{Data[clueNumber - 2].prompt}</h1>
-      <img alt="placeholder space for image" src={img} />
+      <Link to={{
+        pathname: '/found',
+        state: {
+          clueNumber: clueNumber,
+          images: images,
+        },
+      }}
+      >
+        <img alt="placeholder space for image" src={img} />
+      </Link>
       <div className="buttons">
-        <Link to={{
-          pathname: '/found',
-          state: {
-            clueNumber: clueNumber,
-            images: images,
-          },
-        }}
-        >
+        <a href="https://www.washington.edu/maps/" target="_blank" rel="noreferrer">
           <Button large="true" intent="primary">MAP</Button>
-        </Link>
+        </a>
         <a href="www.google.com">HELP</a>
       </div>
     </div>
