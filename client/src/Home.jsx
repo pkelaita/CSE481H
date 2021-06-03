@@ -19,13 +19,13 @@ function Home(props) {
           },
         }}
         >
-          <Button icon="play" large="true" intent="primary"> START</Button>
+          <Button large="true" intent="primary"> START</Button>
         </Link>
         <Link to={{
           pathname: '/stepone',
         }}
         >
-          <Button icon="manual" large="true" intent="primary">  HOW TO PLAY</Button>
+          <Button large="true" intent="primary">  HOW TO PLAY</Button>
         </Link>
       </div>
     </div>

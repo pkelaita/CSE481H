@@ -94,19 +94,19 @@ const data = [
     img: 'images/roberts.png',
     lat: 47.655270,
     long: -122.311493,
-    question: 'Select all of the true statement(s) about the research from UW on microplastics found in Puget Sound oysters.',
-    qtype: 'checkbox',
+    question: 'Select the false statement about the research from UW on microplastics found in Puget Sound oysters.',
+    qtype: 'radio',
     ansOptions: [
       {
-        isCorrect: true,
+        isCorrect: false,
         text: 'Five out of the ten sites examined had oysters that contained microplastics.',
       },
       {
-        isCorrect: false,
+        isCorrect: true,
         text: 'Oysters in the Puget Sound contained an average amount of microplastics in them.',
       },
       {
-        isCorrect: true,
+        isCorrect: false,
         text: 'The research results serve as a first baseline value for microplastics in oysters from Washington.',
       },
     ],
@@ -152,20 +152,20 @@ const data = [
     img: 'images/lifesciences.png',
     lat: 47.655270,
     long: -122.311493,
-    question: 'Why are earlier snow melts due to climate change on Mount Rainier a cause for concern? Select all that apply.',
-    qtype: 'checkbox',
+    question: 'Why are earlier snow melts due to climate change on Mount Rainier a cause for concern?',
+    qtype: 'radio',
     ansOptions: [
       {
         isCorrect: true,
-        text: 'Earlier snow melts lead to Mount Rainier’s wildflowers blooming earlier.',
+        text: 'Earlier snow melts lead to Mount Rainier’s wildflowers blooming earlier, which also creates a mismatch between peak tourism and wildflower blooming.',
       },
       {
-        isCorrect: true,
-        text: 'Rainier’s wildflower bloomed in a different order than usual in 2015 due to snow melting much earlier.',
+        isCorrect: false,
+        text: 'They are not a cause for concern, earlier snow melts are normal and have not changed the ecosystem.',
       },
       {
-        isCorrect: true,
-        text: 'Wildflowers blooming earlier than what tourists expect means there’s a mismatch between peak blooming and tourist season.',
+        isCorrect: false,
+        text: 'Snow melts lead to too much freshwater going into the oceans, which disrupts the PH balance and affects sea life.',
       },
     ],
   },
@@ -210,19 +210,19 @@ const data = [
     img: 'images/law.png',
     lat: 47.655270,
     long: -122.311493,
-    question: 'What are the positive implications of a Library of Things system? Select all that apply.',
-    qtype: 'checkbox',
+    question: 'What is not a possible result of a Library of Things system?',
+    qtype: 'radio',
     ansOptions: [
       {
-        isCorrect: false,
+        isCorrect: true,
         text: 'Library of Things systems can always generate additional revenue for green initiatives.',
       },
       {
-        isCorrect: true,
+        isCorrect: false,
         text: 'Decreased waste and carbon emissions.',
       },
       {
-        isCorrect: true,
+        isCorrect: false,
         text: 'Using a Library of Things system can encourage borrowers to engage in other sustainable behaviors as well.',
       },
     ],

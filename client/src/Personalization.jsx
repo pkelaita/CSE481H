@@ -9,6 +9,7 @@ const Personalization = (props) => {
   const { clueNumber, images } = location.state;
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [selectedLocations, setSelectedLocations] = useState([]);
+  const [locationsToSend, setLocationsToSend] = useState([]);
 
   const options = [
     { value: 0, label: 'Carbon Emissions' },
@@ -25,8 +26,7 @@ const Personalization = (props) => {
     axios.post('http://localhost:5000/personalization', {
       options: selectedOptions,
     }).then((response) => {
-      setSelectedLocations(response);
-      console.log(response);
+      setLocationsToSend(response.data);
     });
   };
 
@@ -43,16 +43,17 @@ const Personalization = (props) => {
     <div className="app-width">
     <h1>Select all topics that interest you</h1>
     <Select className="personalize" options={options} isMulti onChange={handleChange} />
+    {handleNext()}
     <Link to={{
       pathname: '/clue',
       state: {
         clueNumber: 1,
-        locations: selectedOptions,
+        locations: locationsToSend,
         images: images,
       },
     }}
     >
-        <Button icon="play" large="true" intent="primary" onClick={handleNext}>NEXT</Button>
+        <Button large="true" intent="primary" onClick={handleNext}>NEXT</Button>
     </Link>
     </div>
   );

@@ -6,7 +6,7 @@ import Data from './ClueData';
 
 function Looking(props) {
   const location = useLocation();
-  const { clueNumber, images } = location.state;
+  const { clueNumber, locations, images } = location.state;
 
   const latEpsilon = 0.0020;
   const longEpsilon = 0.00070;
@@ -15,16 +15,17 @@ function Looking(props) {
 
   const looking = (
     <div className="app-width">
-      <h1>{Data[clueNumber - 2].prompt}</h1>
+      <h1>{Data[locations[clueNumber - 2]].prompt}</h1>
       <Link to={{
         pathname: '/found',
         state: {
           clueNumber: clueNumber,
+          locations: locations,
           images: images,
         },
       }}
       >
-        <img alt="placeholder space for image" src="images/redsquare.png" />
+        <img alt="placeholder space for image" src={Data[locations[clueNumber - 2]].img} />
       </Link>
       <div className="buttons">
         <a href="https://www.washington.edu/maps/" target="_blank" rel="noreferrer">
@@ -40,6 +41,7 @@ function Looking(props) {
       pathname: '/found',
       state: {
         clueNumber: clueNumber,
+        locations: locations,
         images: images,
       },
     }}
