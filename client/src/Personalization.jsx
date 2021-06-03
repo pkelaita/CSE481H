@@ -23,7 +23,7 @@ const Personalization = (props) => {
   ];
 
   const handleNext = () => {
-    axios.post('http://localhost:5000/api/personalization', {
+    axios.post('http://envirohunt.herokuapp.com/api/personalization', {
       options: selectedOptions,
     }).then((response) => {
       setLocationsToSend(response.data);
