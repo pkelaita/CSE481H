@@ -1,10 +1,6 @@
 import React from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
-import fb from './images/fb.png';
-import twitter from './images/twitter.png';
-import ig from './images/ig.png';
-import share from './images/share.png';
 
 function Result(props) {
   return (
@@ -19,10 +15,10 @@ function Result(props) {
       </div>
       <p>Share your experience with friends and family!</p>
       <div className="social-media">
-        <img alt="fb icon" src={fb} />
-        <img alt="twitter icon" src={twitter} />
-        <img alt="ig icon" src={ig} />
-        <img alt="share icon" src={share} />
+        <img alt="fb icon" src="images/fb.png" />
+        <img alt="twitter icon" src="images/twitter.png" />
+        <img alt="ig icon" src="images/ig.png" />
+        <img alt="share icon" src="images/share.png" />
       </div>
     </div>
   );

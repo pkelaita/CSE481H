@@ -5,7 +5,7 @@ import Data from './ClueData';
 
 const Clue = (props) => {
   const location = useLocation();
-  const { clueNumber, images } = location.state;
+  const { clueNumber, selectedLocations, images } = location.state;
 
   const determineFirstOrNext = () => {
     let ret = 'next';

@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react';
 import { usePosition } from 'use-position';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation, Redirect } from 'react-router-dom';
-import img from './images/clue.png';
 import Data from './ClueData';
 
 function Looking(props) {
@@ -25,7 +24,7 @@ function Looking(props) {
         },
       }}
       >
-        <img alt="placeholder space for image" src={img} />
+        <img alt="placeholder space for image" src="images/redsquare.png" />
       </Link>
       <div className="buttons">
         <a href="https://www.washington.edu/maps/" target="_blank" rel="noreferrer">
