@@ -5,7 +5,7 @@ import ReactCardFlip from 'react-card-flip';
 
 function Album(props) {
   const location = useLocation();
-  const { images } = location.state;
+  const { locations, images } = location.state;
   const [isFlipped1, setIsFlipped1] = useState(false);
   const [isFlipped2, setIsFlipped2] = useState(false);
   const [isFlipped3, setIsFlipped3] = useState(false);
@@ -75,6 +75,7 @@ function Album(props) {
         <Link to={{
           pathname: '/endofhunt',
           state: {
+            locations: locations,
             images: images,
           },
         }}

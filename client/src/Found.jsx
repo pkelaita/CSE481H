@@ -3,6 +3,7 @@ import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 import { Camera } from 'react-camera-pro';
 import ReactCardFlip from 'react-card-flip';
+import Data from './ClueData';
 
 function Found(props) {
   const camera = useRef(null);
@@ -14,6 +15,7 @@ function Found(props) {
 
   const location = useLocation();
   const { clueNumber, locations, images } = location.state;
+  const [currLocation, setCurrLocation] = useState();
 
   let path = '';
   let buttonText = '';
@@ -33,6 +35,7 @@ function Found(props) {
   const handleTakePhoto = () => {
     setTakePhoto(false);
     setImage(camera.current.takePhoto());
+    setCurrLocation(Data[locations[clueNumber - 2]]);
   };
 
   const handleUsePhoto = () => {
@@ -78,9 +81,9 @@ function Found(props) {
       <img src={image} alt="image" className="photo" onClick={flipCard} />
 
       <div className="fact-card" onClick={flipCard}>
-        <p>phrase</p>
-        <p>fact para 1</p>
-        <p>fact para 2</p>
+        <p>{Data[locations[clueNumber - 2]].phrase}</p>
+        <p>{Data[locations[clueNumber - 2]].short[0]}</p>
+        <p>{Data[locations[clueNumber - 2]].short[1]}</p>
       </div>
     </ReactCardFlip>
   );
