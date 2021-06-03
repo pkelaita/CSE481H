@@ -1,6 +1,5 @@
 # CSE481H
 
-### Running the project
 * Running the server
     * Navigate to the root directory of this project, then `cd server`
     * Ensure that Python > 3.7 is installed
