@@ -32,6 +32,7 @@ function Album(props) {
   return (
     <div className="app-width">
       <h1>Here&apos;s your album of photos and facts!</h1>
+      <p>Click on each photo/fact card below to view the other side</p>
 
         <ReactCardFlip isFlipped={isFlipped1} flipDirection="horizontal">
             <img src={images[0]} alt="image" className="photo" onClick={flipCard1} />

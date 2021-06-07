@@ -90,7 +90,7 @@ function Found(props) {
   const showTakenPhoto =
   (
     <div>
-      <p>click on the photo/fact card below to view the other side</p>
+      <p>Click on the photo/fact card below to view the other side</p>
       {flippingCard}
       { confirmPhoto ? showSaveOrRetake : null }
     </div>
