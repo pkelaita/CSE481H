@@ -37,9 +37,8 @@ function Album(props) {
             <img src={images[0]} alt="image" className="photo" onClick={flipCard1} />
 
             <div className="fact-card" onClick={flipCard1}>
-                <p>phrase</p>
-                <p>fact 1</p>
-                <p>fact 2</p>
+              <p>{Data[locations[0]].phrase}</p>
+              <p>{Data[locations[0]].short}</p>
             </div>
         </ReactCardFlip>
 
@@ -47,9 +46,8 @@ function Album(props) {
             <img src={images[1]} alt="image" className="photo" onClick={flipCard2} />
 
             <div className="fact-card" onClick={flipCard2}>
-                <p>phrase</p>
-                <p>fact para 1</p>
-                <p>fact para 2</p>
+              <p>{Data[locations[1]].phrase}</p>
+              <p>{Data[locations[1]].short}</p>
             </div>
         </ReactCardFlip>
 
@@ -57,9 +55,8 @@ function Album(props) {
             <img src={images[2]} alt="image" className="photo" onClick={flipCard3} />
 
             <div className="fact-card" onClick={flipCard3}>
-                <p>phrase</p>
-                <p>fact para 1</p>
-                <p>fact para 2</p>
+              <p>{Data[locations[2]].phrase}</p>
+              <p>{Data[locations[2]].short}</p>
             </div>
         </ReactCardFlip>
 
@@ -67,9 +64,8 @@ function Album(props) {
             <img src={images[3]} alt="image" className="photo" onClick={flipCard4} />
 
             <div className="fact-card" onClick={flipCard4}>
-                <p>phrase</p>
-                <p>fact para 1</p>
-                <p>fact para 2</p>
+              <p>{Data[locations[3]].phrase}</p>
+              <p>{Data[locations[3]].short}</p>
             </div>
         </ReactCardFlip>
 

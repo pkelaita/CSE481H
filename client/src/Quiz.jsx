@@ -1,38 +1,44 @@
 import { React, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button, RadioGroup, Radio, Checkbox } from '@blueprintjs/core';
+import axios from 'axios';
 import Data from './ClueData';
 
 function Quiz(props) {
   const location = useLocation();
   const { locations } = location.state;
 
-  let results = [true, true, true, true];
-  const [result, setResult] = useState(0);
+  let results = [0, 0, 0, 0];
+  const [result, setResult] = useState(-1);
 
-  const getResult = (res) => {
-    let count = 0;
-    for (let i = 0; i < res.length; i++) {
-      if (results[i]) {
-        count++;
-      }
+  const buildOptions = () => {
+    const map = {};
+    for (let i = 0; i < 4; i++) {
+      map[locations[i]] = results[i];
     }
-    return count;
+    return map;
   };
 
-  const handleChange = (e, qNum, res) => {
-    if (e.target.value === 'true') {
-      res[qNum] = true;
-    } else {
-      res[qNum] = false;
-    }
-    console.log(res);
-    setResult(getResult(res));
+  const getResult = () => {
+    console.log('results:');
+    console.log(results);
+    const temp = { options: buildOptions() };
+    console.log(temp);
+    axios.post('https://envirohunt.herokuapp.com/api/quiz', temp).then((response) => {
+      let res = 3;
+      setResult(res);
+      console.log(result);
+    });
+  };
+
+  const handleChange = (e, qNum) => {
+    results[qNum] = e.target.value;
+    console.log(results);
   };
 
   const label = (qNum, currLocation, qname, id) => (
     <label htmlFor={id + '3'}>
-      <input value={currLocation.ansOptions[2].isCorrect} type={currLocation.qtype} id={id + '3'} name={qname} className={currLocation.qtype} onClick={(e) => handleChange(e, qNum, results)} />
+      <input value={3} type={currLocation.qtype} id={id + '3'} name={qname} className={currLocation.qtype} onChange={(e) => handleChange(e, qNum)} />
       {currLocation.ansOptions[2].text}
     </label>
   );
@@ -43,11 +49,11 @@ function Quiz(props) {
       <br />
       <br />
       <label htmlFor={id + '1'}>
-        <input value={currLocation.ansOptions[0].isCorrect} type={currLocation.qtype} id={id + '1'} name={qname} className={currLocation.qtype} onClick={(e) => handleChange(e, qNum, results)} />
+        <input value={1} type={currLocation.qtype} id={id + '1'} name={qname} className={currLocation.qtype} onChange={(e) => handleChange(e, qNum)} />
         {currLocation.ansOptions[0].text}
       </label><br />
       <label htmlFor={id + '2'}>
-        <input value={currLocation.ansOptions[1].isCorrect} type={currLocation.qtype} id={id + '2'} name={qname} className={currLocation.qtype} onClick={(e) => handleChange(e, qNum, results)} />
+        <input value={2} type={currLocation.qtype} id={id + '2'} name={qname} className={currLocation.qtype} onChange={(e) => handleChange(e, qNum)} />
         {currLocation.ansOptions[1].text}
       </label><br />
       { (currLocation.ansOptions.length > 2) ? label(qNum, currLocation, qname, id) : null }
@@ -66,9 +72,9 @@ function Quiz(props) {
       <h1>Quiz Time!</h1>
       <ol>
         {getLi(0, 'question1', 'q1o')}
-        {getLi(1, 'question2')}
-        {getLi(2, 'question3')}
-        {getLi(3, 'question4')}
+        {getLi(1, 'question2', 'q2o')}
+        {getLi(2, 'question3', 'q3o')}
+        {getLi(3, 'question4', 'q4o')}
       </ol>
       <div className="buttons">
         <Link to={{
@@ -78,7 +84,7 @@ function Quiz(props) {
           },
         }}
         >
-          <Button large="true" intent="primary">SHOW RESULTS</Button>
+          <Button large="true" intent="primary" onClick={getResult}>SHOW RESULTS</Button>
         </Link>
         { console.log(result) }
       </div>

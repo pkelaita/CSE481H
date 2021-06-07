@@ -81,9 +81,8 @@ function Found(props) {
       <img src={image} alt="image" className="photo" onClick={flipCard} />
 
       <div className="fact-card" onClick={flipCard}>
-        <p>phrase</p>
-        <p>fact 1</p>
-        <p>fact 2</p>
+        <p>{Data[locations[clueNumber - 2]].phrase}</p>
+        <p>{Data[locations[clueNumber - 2]].short}</p>
       </div>
     </ReactCardFlip>
   );
@@ -91,6 +90,7 @@ function Found(props) {
   const showTakenPhoto =
   (
     <div>
+      <p>click on the photo/fact card below to view the other side</p>
       {flippingCard}
       { confirmPhoto ? showSaveOrRetake : null }
     </div>
