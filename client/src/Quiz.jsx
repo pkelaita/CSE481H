@@ -6,7 +6,7 @@ import Data from './ClueData';
 
 function Quiz(props) {
   const location = useLocation();
-  const { locations, images } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
   const [path, setPath] = useState('');
 
   let results = [0, 0, 0, 0];
@@ -85,8 +85,10 @@ function Quiz(props) {
         <Link to={{
           pathname: path,
           state: {
+            clueNumber: -1,
             locations: locations,
             images: images,
+            fromFailed: null,
             res: result,
           },
         }}

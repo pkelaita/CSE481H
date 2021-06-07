@@ -6,7 +6,7 @@ import Data from './ClueData';
 
 function Album(props) {
   const location = useLocation();
-  const { locations, images, fromFailed } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
   const [isFlipped1, setIsFlipped1] = useState(false);
   const [isFlipped2, setIsFlipped2] = useState(false);
   const [isFlipped3, setIsFlipped3] = useState(false);
@@ -82,8 +82,11 @@ function Album(props) {
         <Link to={{
           pathname: path,
           state: {
+            clueNumber: -1,
             locations: locations,
             images: images,
+            fromFailed: null,
+            res: -1,
           },
         }}
         >

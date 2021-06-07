@@ -52,6 +52,8 @@ const Personalization = (props) => {
           clueNumber: 1,
           locations: locationsToSend,
           images: images,
+          fromFailed: null,
+          res: -1,
         },
       }}
       >

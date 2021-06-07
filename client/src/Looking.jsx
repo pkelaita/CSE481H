@@ -6,7 +6,7 @@ import Data from './ClueData';
 
 function Looking(props) {
   const location = useLocation();
-  const { clueNumber, locations, images } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
 
   const latEpsilon = 0.0020;
   const longEpsilon = 0.00070;
@@ -22,6 +22,8 @@ function Looking(props) {
           clueNumber: clueNumber,
           locations: locations,
           images: images,
+          fromFailed: null,
+          res: -1,
         },
       }}
       >
@@ -43,6 +45,8 @@ function Looking(props) {
         clueNumber: clueNumber,
         locations: locations,
         images: images,
+        fromFailed: null,
+        res: -1,
       },
     }}
     />

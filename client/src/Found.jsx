@@ -14,7 +14,7 @@ function Found(props) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const location = useLocation();
-  const { clueNumber, locations, images } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
   const [currLocation, setCurrLocation] = useState();
 
   let path = '';
@@ -107,6 +107,8 @@ function Found(props) {
             clueNumber: clueNumber,
             locations: locations,
             images: images,
+            fromFailed: null,
+            res: -1,
           },
         }}
         >

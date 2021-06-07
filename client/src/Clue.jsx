@@ -6,7 +6,7 @@ import Data from './ClueData';
 const Clue = (props) => {
   const location = useLocation();
   console.log(location);
-  const { clueNumber, locations, images } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
   let currLocation;
 
   const determineFirstOrNext = () => {
@@ -40,6 +40,8 @@ const Clue = (props) => {
             clueNumber: clueNumber + 1,
             locations: locations,
             images: images,
+            fromFailed: null,
+            res: -1,
           },
         }}
         >

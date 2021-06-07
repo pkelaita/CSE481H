@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 function EndOfHunt(props) {
   const location = useLocation();
-  const { clueNumber, locations, images } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
 
   return (
     <div className="app-width">
@@ -16,9 +16,11 @@ function EndOfHunt(props) {
         <Link to={{
           pathname: '/album',
           state: {
+            clueNumber: -1,
             locations: locations,
             images: images,
             fromFailed: false,
+            res: -1,
           },
         }}
         >
@@ -27,8 +29,11 @@ function EndOfHunt(props) {
         <Link to={{
           pathname: '/quiz',
           state: {
+            clueNumber: -1,
             locations: locations,
             images: images,
+            fromFailed: null,
+            res: -1,
           },
         }}
         >

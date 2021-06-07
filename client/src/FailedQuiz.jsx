@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 function FailedQuiz(props) {
   const location = useLocation();
-  const { locations, images, res } = location.state;
+  const { clueNumber, locations, images, fromFailed, res } = location.state;
 
   return (
     <div className="app-width">
@@ -14,9 +14,11 @@ function FailedQuiz(props) {
         <Link to={{
           pathname: '/album',
           state: {
+            clueNumber: -1,
             locations: locations,
             images: images,
             fromFailed: true,
+            res: -1,
           },
         }}
         >
@@ -25,8 +27,11 @@ function FailedQuiz(props) {
         <Link to={{
           pathname: '/quiz',
           state: {
+            clueNumber: -1,
             locations: locations,
             images: images,
+            fromFailed: null,
+            res: -1,
           },
         }}
         >
