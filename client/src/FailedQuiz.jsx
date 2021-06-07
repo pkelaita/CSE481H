@@ -35,7 +35,7 @@ function FailedQuiz(props) {
           },
         }}
         >
-          <Button large="true" intent="primary">TAKE QUIZ</Button>
+          <Button large="true" intent="primary">RETAKE QUIZ</Button>
         </Link>
       </div>
     </div>
