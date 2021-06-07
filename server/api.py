@@ -5,6 +5,7 @@ from utils import tojson
 import config as api_config
 
 from routes.personalization import personalization_bp
+from routes.submit import submit_bp
 
 app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 app.config.from_object('config.BaseConfig')
@@ -24,6 +25,7 @@ def root():
 
 # Attach routes
 app.register_blueprint(personalization_bp)
+app.register_blueprint(submit_bp)
 
 if __name__ == '__main__':
     app.run(host=api_config.API_HOST, port=api_config.API_PORT)
