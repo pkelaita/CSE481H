@@ -1,0 +1,7 @@
+README.md
+setup.cfg
+setup.py
+envirohunt.egg-info/PKG-INFO
+envirohunt.egg-info/SOURCES.txt
+envirohunt.egg-info/dependency_links.txt
+envirohunt.egg-info/top_level.txt
