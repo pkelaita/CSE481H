@@ -25,10 +25,9 @@ function Quiz(props) {
     console.log(results);
     const temp = { options: buildOptions() };
     console.log(temp);
-    axios.post('https://envirohunt.herokuapp.com/api/quiz', temp).then((response) => {
-      let res = 3;
-      setResult(res);
-      if (res < 3) {
+    axios.post('https://envirohunt.herokuapp.com/api/submit', temp).then((response) => {
+      setResult(response);
+      if (response < 3) {
         setPath('./failedquiz');
       } else {
         setPath('./result');
