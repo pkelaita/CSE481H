@@ -24,8 +24,9 @@ function Quiz(props) {
     console.log(temp);
     temp = JSON.parse(JSON.stringify(temp));
     axios.post('https://envirohunt.herokuapp.com/api/submit', temp).then((response) => {
-      setResult(response);
-      if (response < 3) {
+      console.log(response.data);
+      setResult(response.data);
+      if (response.data < 3) {
         setPath('/failedquiz');
       } else {
         setPath('/result');
@@ -95,8 +96,7 @@ function Quiz(props) {
         {getLi(3, 'question4', 'q4o')}
       </ol>
       <div className="buttons">
-          <Button large="true" intent="primary" onClick={getResult}>SHOW RESULTS</Button>
-        { console.log(result) }
+        <Button large="true" intent="primary" onClick={getResult}>SHOW RESULTS</Button>
       </div>
     </div>
   );
