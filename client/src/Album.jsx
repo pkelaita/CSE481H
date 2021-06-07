@@ -6,11 +6,12 @@ import Data from './ClueData';
 
 function Album(props) {
   const location = useLocation();
-  const { locations, images } = location.state;
+  const { locations, images, fromFailed } = location.state;
   const [isFlipped1, setIsFlipped1] = useState(false);
   const [isFlipped2, setIsFlipped2] = useState(false);
   const [isFlipped3, setIsFlipped3] = useState(false);
   const [isFlipped4, setIsFlipped4] = useState(false);
+  const [path, setPath] = useState('');
 
   const flipCard1 = (e) => {
     e.preventDefault();
@@ -27,6 +28,14 @@ function Album(props) {
   const flipCard4 = (e) => {
     e.preventDefault();
     setIsFlipped4(!isFlipped4);
+  };
+
+  const setPathHook = () => {
+    if (fromFailed) {
+      setPath('./failedquiz');
+    } else {
+      setPath('./endofhunt');
+    }
   };
 
   return (
@@ -71,14 +80,14 @@ function Album(props) {
         </ReactCardFlip>
 
         <Link to={{
-          pathname: '/endofhunt',
+          pathname: path,
           state: {
             locations: locations,
             images: images,
           },
         }}
         >
-          <Button large="true" intent="primary">BACK</Button>
+          <Button large="true" intent="primary" onClick={setPathHook}>BACK</Button>
         </Link>
 
     </div>

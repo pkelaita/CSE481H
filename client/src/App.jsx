@@ -17,6 +17,7 @@ import StepFive from './instruction-pages/StepFive';
 import StepSix from './instruction-pages/StepSix';
 import Album from './Album';
 import Personalization from './Personalization';
+import FailedQuiz from './FailedQuiz';
 
 function App(props) {
   return (
@@ -39,7 +40,7 @@ function App(props) {
           <Route path="/stepsix" exact component={() => <StepSix />} />
           <Route path="/album" exact component={() => <Album />} />
           <Route path="/personalization" exact component={() => <Personalization />} />
-
+          <Route path="/failedquiz" exact component={() => <FailedQuiz />} />
         </Switch>
       </BrowserRouter>
     </div>

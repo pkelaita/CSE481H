@@ -2,23 +2,21 @@ import React from 'react';
 import { Button } from '@blueprintjs/core';
 import { Link, useLocation } from 'react-router-dom';
 
-function EndOfHunt(props) {
+function FailedQuiz(props) {
   const location = useLocation();
-  const { clueNumber, locations, images } = location.state;
+  const { locations, images, res } = location.state;
 
   return (
     <div className="app-width">
-      <h1>You completed the hunt!</h1>
-      <p>Good work! You’ve located and learned about all four clues and facts scattered around the UW campus, so now it’s time to put your newfound knowledge to the test.</p>
-      <p>Review your knowledge by checking out the album that you’ve been using to store your facts and memories. Afterwards, take a short quiz to redeem your custom photo collage and coupon to select sustainable products at the UW Bookstore.</p>
-      <p><b>Answer three out of four questions correctly to redeem your collage and coupon. You have unlimited attempts!</b></p>
+      <h1>Oh no!</h1>
+      <p>You got {res} out of 4 questions correct, but you need at least 3 to win the collage and voucher. Review your album and try again!</p>
       <div className="buttons">
         <Link to={{
           pathname: '/album',
           state: {
             locations: locations,
             images: images,
-            fromFailed: false,
+            fromFailed: true,
           },
         }}
         >
@@ -39,4 +37,4 @@ function EndOfHunt(props) {
   );
 }
 
-export default EndOfHunt;
+export default FailedQuiz;

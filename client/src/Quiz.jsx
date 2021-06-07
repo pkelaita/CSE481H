@@ -6,7 +6,8 @@ import Data from './ClueData';
 
 function Quiz(props) {
   const location = useLocation();
-  const { locations } = location.state;
+  const { locations, images } = location.state;
+  const [path, setPath] = useState('');
 
   let results = [0, 0, 0, 0];
   const [result, setResult] = useState(-1);
@@ -27,6 +28,11 @@ function Quiz(props) {
     axios.post('https://envirohunt.herokuapp.com/api/quiz', temp).then((response) => {
       let res = 3;
       setResult(res);
+      if (res < 3) {
+        setPath('./failedquiz');
+      } else {
+        setPath('./result');
+      }
       console.log(result);
     });
   };
@@ -78,8 +84,10 @@ function Quiz(props) {
       </ol>
       <div className="buttons">
         <Link to={{
-          pathname: '/result',
+          pathname: path,
           state: {
+            locations: locations,
+            images: images,
             res: result,
           },
         }}

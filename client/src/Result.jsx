@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 function Result(props) {
   const location = useLocation();
-  const { res } = location.state;
+  const { locations, images, res } = location.state;
 
   return (
     <div className="app-width">
