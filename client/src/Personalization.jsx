@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { Button } from '@blueprintjs/core';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import axios from 'axios';
 
@@ -10,6 +10,7 @@ const Personalization = (props) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [locationsToSend, setLocationsToSend] = useState([]);
+  const [show, setShow] = useState(true);
 
   const options = [
     { value: 0, label: 'Carbon Emissions' },
@@ -27,6 +28,7 @@ const Personalization = (props) => {
       options: selectedOptions,
     }).then((response) => {
       setLocationsToSend(response.data);
+      setShow(false);
     });
   };
 
@@ -41,24 +43,31 @@ const Personalization = (props) => {
     }
   };
 
-  return (
+  const rest = (
     <div className="app-width">
       <h1>Select all topics that interest you:</h1>
       <Select className="personalize" options={options} isMulti onChange={handleChange} />
-      {handleNext()}
-      <Link to={{
-        pathname: '/clue',
-        state: {
-          clueNumber: 1,
-          locations: locationsToSend,
-          images: images,
-          fromFailed: null,
-          res: -1,
-        },
-      }}
-      >
-        <Button large="true" intent="primary" onClick={handleNext}>NEXT</Button>
-      </Link>
+      <Button large="true" intent="primary" onClick={handleNext}>NEXT</Button>
+    </div>
+  );
+
+  const redirect = (
+    <Redirect to={{
+      pathname: '/clue',
+      state: {
+        clueNumber: 1,
+        locations: locationsToSend,
+        images: images,
+        fromFailed: null,
+        res: -1,
+      },
+    }}
+    />
+  );
+
+  return (
+    <div>
+      { show ? rest : redirect }
     </div>
   );
 };

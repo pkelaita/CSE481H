@@ -32,9 +32,9 @@ function Album(props) {
 
   const setPathHook = () => {
     if (fromFailed) {
-      setPath('./failedquiz');
+      setPath('/failedquiz');
     } else {
-      setPath('./endofhunt');
+      setPath('/endofhunt');
     }
   };
 

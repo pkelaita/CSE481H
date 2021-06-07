@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Redirect } from 'react-router-dom';
 import { Button, RadioGroup, Radio, Checkbox } from '@blueprintjs/core';
 import axios from 'axios';
 import Data from './ClueData';
@@ -8,33 +8,46 @@ function Quiz(props) {
   const location = useLocation();
   const { clueNumber, locations, images, fromFailed, res } = location.state;
   const [path, setPath] = useState('');
+  const [show, setShow] = useState(true);
 
   let results = [0, 0, 0, 0];
   const [result, setResult] = useState(-1);
 
-  const buildOptions = () => {
-    const map = {};
-    for (let i = 0; i < 4; i++) {
-      map[locations[i]] = results[i];
-    }
-    return map;
-  };
-
   const getResult = () => {
     console.log('results:');
     console.log(results);
-    const temp = { options: buildOptions() };
+    let map = {};
+    for (let i = 0; i < 4; i++) {
+      map[locations[i]] = results[i];
+    }
+    let temp = { options: map };
     console.log(temp);
+    temp = JSON.parse(JSON.stringify(temp));
     axios.post('https://envirohunt.herokuapp.com/api/submit', temp).then((response) => {
       setResult(response);
       if (response < 3) {
-        setPath('./failedquiz');
+        setPath('/failedquiz');
       } else {
-        setPath('./result');
+        setPath('/result');
       }
       console.log(result);
+      setShow(false);
     });
   };
+
+  const redirect = (
+    <Redirect to={{
+      pathname: path,
+      state: {
+        clueNumber: -1,
+        locations: locations,
+        images: images,
+        fromFailed: null,
+        res: result,
+      },
+    }}
+    />
+  );
 
   const handleChange = (e, qNum) => {
     results[qNum] = e.target.value;
@@ -72,7 +85,7 @@ function Quiz(props) {
     return li(qNum, currLocation, qname);
   };
 
-  return (
+  const rest = (
     <div className="app-width">
       <h1>Quiz Time!</h1>
       <ol>
@@ -82,21 +95,15 @@ function Quiz(props) {
         {getLi(3, 'question4', 'q4o')}
       </ol>
       <div className="buttons">
-        <Link to={{
-          pathname: path,
-          state: {
-            clueNumber: -1,
-            locations: locations,
-            images: images,
-            fromFailed: null,
-            res: result,
-          },
-        }}
-        >
           <Button large="true" intent="primary" onClick={getResult}>SHOW RESULTS</Button>
-        </Link>
         { console.log(result) }
       </div>
+    </div>
+  );
+
+  return (
+    <div>
+      { show ? rest : redirect }
     </div>
   );
 }
