@@ -14,26 +14,29 @@ function Quiz(props) {
   const [result, setResult] = useState(-1);
 
   const getResult = () => {
-    console.log('results:');
-    console.log(results);
-    let map = {};
-    for (let i = 0; i < 4; i++) {
-      map[locations[i]] = results[i];
-    }
-    let temp = { options: map };
-    console.log(temp);
-    temp = JSON.parse(JSON.stringify(temp));
-    axios.post('https://envirohunt.herokuapp.com/api/submit', temp).then((response) => {
-      console.log(response.data);
-      setResult(response.data);
-      if (response.data < 3) {
-        setPath('/failedquiz');
-      } else {
-        setPath('/result');
-      }
-      console.log(result);
-      setShow(false);
-    });
+    // console.log('results:');
+    // console.log(results);
+    // let map = {};
+    // for (let i = 0; i < 4; i++) {
+    //   map[locations[i]] = results[i];
+    // }
+    // let temp = { options: map };
+    // console.log(temp);
+    // temp = JSON.parse(JSON.stringify(temp));
+    // axios.post('https://envirohunt.herokuapp.com/api/submit', temp).then((response) => {
+    //   console.log(response.data);
+    //   setResult(response.data);
+    //   if (response.data < 3) {
+    //     setPath('/failedquiz');
+    //   } else {
+    //     setPath('/result');
+    //   }
+    //   console.log(result);
+    //   setShow(false);
+    // });
+    setResult(3);
+    setPath('/result');
+    setShow(false);
   };
 
   const redirect = (

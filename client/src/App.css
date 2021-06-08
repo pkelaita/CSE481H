@@ -84,6 +84,8 @@ Button {
   color: #EFF9F7;
   width: 190px;
   height: 55px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .hunt {
