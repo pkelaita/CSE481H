@@ -9,7 +9,7 @@ from routes.submit import submit_bp
 
 app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 app.config.from_object('config.BaseConfig')
-CORS(app)
+CORS(app, resources={r'*': {'origins': '*'}})
 
 
 @app.route('/', defaults={'path': ''})
