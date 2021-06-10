@@ -20,8 +20,5 @@ correct = {
 @submit_bp.route(f'/api/{endpoint}', methods=['GET', 'POST'])
 def submit():
     opt = request.get_json()['options']
-    res = 0
-    for q in opt:
-        if opt[q] == correct[int(q)]:
-            res += 1
+    res = len([q for q in opt if int(opt[q]) == correct[int(q)]])
     return tojson(res)
