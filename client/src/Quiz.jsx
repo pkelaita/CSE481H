@@ -26,8 +26,10 @@ function Quiz(props) {
       console.log(response.data);
       setResult(response.data);
       if (response.data < 3) {
+        console.log('setting path to failed quiz');
         setPath('/failedquiz');
       } else {
+        console.log('setting path to result');
         setPath('/result');
       }
       setShow(false);
