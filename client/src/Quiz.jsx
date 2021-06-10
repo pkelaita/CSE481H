@@ -2,7 +2,9 @@ import { React, useState } from 'react';
 import { Link, useLocation, Redirect } from 'react-router-dom';
 import { Button, RadioGroup, Radio, Checkbox } from '@blueprintjs/core';
 import axios from 'axios';
+
 import Data from './ClueData';
+import { serverUrl } from './constants';
 
 function Quiz(props) {
   const location = useLocation();
@@ -14,29 +16,22 @@ function Quiz(props) {
   const [result, setResult] = useState(-1);
 
   const getResult = () => {
-    // console.log('results:');
-    // console.log(results);
-    // let map = {};
-    // for (let i = 0; i < 4; i++) {
-    //   map[locations[i]] = results[i];
-    // }
-    // let temp = { options: map };
-    // console.log(temp);
-    // temp = JSON.parse(JSON.stringify(temp));
-    // axios.post('https://envirohunt.herokuapp.com/api/submit', temp).then((response) => {
-    //   console.log(response.data);
-    //   setResult(response.data);
-    //   if (response.data < 3) {
-    //     setPath('/failedquiz');
-    //   } else {
-    //     setPath('/result');
-    //   }
-    //   console.log(result);
-    //   setShow(false);
-    // });
-    setResult(3);
-    setPath('/result');
-    setShow(false);
+    let map = {};
+    for (let i = 0; i < 4; i++) {
+      map[locations[i]] = results[i];
+    }
+    let temp = { options: map };
+    temp = JSON.parse(JSON.stringify(temp));
+    axios.post(`${serverUrl}/api/submit`, temp).then((response) => {
+      console.log(response.data);
+      setResult(response.data);
+      if (response.data < 3) {
+        setPath('/failedquiz');
+      } else {
+        setPath('/result');
+      }
+      setShow(false);
+    });
   };
 
   const redirect = (

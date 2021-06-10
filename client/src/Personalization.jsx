@@ -4,6 +4,8 @@ import { Link, useLocation, Redirect } from 'react-router-dom';
 import Select from 'react-select';
 import axios from 'axios';
 
+import { serverUrl } from './constants';
+
 const Personalization = (props) => {
   const location = useLocation();
   const { clueNumber, images } = location.state;
@@ -24,12 +26,17 @@ const Personalization = (props) => {
   ];
 
   const handleNext = () => {
-    axios.post('https://envirohunt.herokuapp.com/api/personalization', {
-      options: selectedOptions,
-    }).then((response) => {
-      setLocationsToSend(response.data);
-      setShow(false);
-    });
+    axios
+      .post(`${serverUrl}/api/personalization`, {
+        options: selectedOptions,
+      })
+      .then((response) => {
+        setLocationsToSend(response.data);
+        setShow(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleChange = (so) => {
@@ -40,36 +47,41 @@ const Personalization = (props) => {
         temp[so[i].value] = true;
       }
       setSelectedOptions(temp);
+      console.log(selectedOptions);
     }
   };
 
   const rest = (
     <div className="app-width">
       <h1>Select all topics that interest you:</h1>
-      <Select className="personalize" options={options} isMulti onChange={handleChange} />
-      <Button large="true" intent="primary" onClick={handleNext}>NEXT</Button>
+      <Select
+        className="personalize"
+        options={options}
+        isMulti
+        onChange={handleChange}
+      />
+      <Button large="true" intent="primary" onClick={handleNext}>
+        NEXT
+      </Button>
     </div>
   );
 
   const redirect = (
-    <Redirect to={{
-      pathname: '/clue',
-      state: {
-        clueNumber: 1,
-        locations: locationsToSend,
-        images: images,
-        fromFailed: null,
-        res: -1,
-      },
-    }}
+    <Redirect
+      to={{
+        pathname: '/clue',
+        state: {
+          clueNumber: 1,
+          locations: locationsToSend,
+          images: images,
+          fromFailed: null,
+          res: -1,
+        },
+      }}
     />
   );
 
-  return (
-    <div>
-      { show ? rest : redirect }
-    </div>
-  );
+  return <div>{show ? rest : redirect}</div>;
 };
 
 export default Personalization;
